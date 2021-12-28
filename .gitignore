@@ -1,0 +1,9 @@
+node_modules
+.cache
+.config
+.bash_history
+package-lock.json
+.npm
+.yarn
+# Keep environment variables out of version control
+.env

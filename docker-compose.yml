@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  app:
+    depends_on:
+      - db
+    container_name: "teste-node"
+    entrypoint: ./.docker/entrypoint.sh
+    build: .
+    ports:
+      - 80:3000
+    volumes:
+      - .:/home/node
+  db:
+    image: mariadb
+    container_name: "teste-node-db"
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: nodedb
