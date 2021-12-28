@@ -1,2 +1,2 @@
 #!/bin/bash
-npm install && npm run dev
+npm install && npx prisma migrate dev && npm run dev
